@@ -14,6 +14,7 @@ namespace subtask {
 
   String update()
   {
+    user_input = "";
     if (Serial.available())
     {
       user_input = Serial.readString();
