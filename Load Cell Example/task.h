@@ -45,10 +45,18 @@ namespace task
 
       if (process == "tare")
       {
-        sensors::tare();
         PRINT("Taring...");
+        END_LOG;
+        sensors::tare();
+        delay(2000);
       }
-
+      if (process == "calibrate")
+      {
+        PRINT("Calibrating...");
+        END_LOG;
+        sensors::calibrate();
+        delay(1000);
+      }
       sensors::update();
 
       delay(50);
