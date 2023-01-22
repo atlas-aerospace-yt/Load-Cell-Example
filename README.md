@@ -14,13 +14,13 @@ Written based off of the [ConsciOS](https://github.com/OrionAerospaceYT/ConsciOS
 Connect the load cell to the HX711 amplifier module using LOAD_CELL_DOUT_PIN=2 and LOAD_CELL_SCK_PIN=3
 Upload the code to your board.
 Data should show on the terminal (assuming you are using the [SideKick GUI](https://github.com/OrionAerospaceYT/SideKick).
+To tare just send "tare" through terminal.
 To calibrate the sensor:
 - remove all mass from the scale
 - send "calibrate" through terminal
 - put a known mass on the scale
 - send the mass through terminal
 - To keep these settings edit the 
-To tare just send "tare" through terminal.
 
 ## Dependencies
 
