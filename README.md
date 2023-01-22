@@ -24,7 +24,7 @@ To calibrate the sensor:
 
 ## Dependencies
 
-[SideKick GUI](https://github.com/OrionAerospaceYT/SideKick)
+[SideKick GUI](https://github.com/OrionAerospaceYT/SideKick)<br>
 HX711 library
 
 ## Contributing
