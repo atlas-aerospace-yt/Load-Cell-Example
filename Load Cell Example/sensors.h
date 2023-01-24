@@ -109,9 +109,5 @@ namespace sensors {
       data = (scale.read() + offset) * multiplier;
       GRAPH("Value", data, TOP);
     }
-    else
-    {
-      PRINT("No HX711 detected.");
-    }
   }
 }  // namespace sensors
