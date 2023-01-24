@@ -7,11 +7,14 @@
 // Include your sensor libraries here
 #include "HX711.h"
 
-namespace sensors {
+// Definitions to Edit
+#define LOAD_CELL_DOUT_PIN 2
+#define LOAD_CELL_SCK_PIN 3
 
-  // Edit these pins to the ones on your load cell.
-  const int LOAD_CELL_DOUT_PIN = 2;
-  const int LOAD_CELL_SCK_PIN = 3;
+#define offset_val 0
+#define multiplier_val 1
+
+namespace sensors {
 
   // Sensor and value definitions.
   long data;
@@ -19,8 +22,8 @@ namespace sensors {
 
   // Sensor calibration definitions
   float cal_reading = 0;
-  float offset = 0;
-  float multiplier = 1;
+  float offset = offset_val;
+  float multiplier = multiplier_val;
 
   // User input definitions
   int input_char;
@@ -84,6 +87,11 @@ namespace sensors {
     if (cal_reading != 0)
     {
       multiplier = cal_input / cal_reading;
+      PRINT("Offset: ");
+      PRINT(offset);
+      PRINT(", Multiplier: ");
+      PRINT(multiplier);
+      END_LOG;
     }
     else
     {
@@ -100,6 +108,10 @@ namespace sensors {
       // Gets and outputs the data to the top graph.
       data = (scale.read() + offset) * multiplier;
       GRAPH("Value", data, TOP);
+    }
+    else
+    {
+      PRINT("No HX711 detected.");
     }
   }
 }  // namespace sensors
